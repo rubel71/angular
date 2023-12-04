@@ -1,0 +1,28 @@
+<mat-sidenav-container class="sidenav-container">
+  <mat-sidenav #drawer class="sidenav" fixedInviewPort [opened]="false">
+    <mat-toolbar>BD Properties</mat-toolbar>
+    <mat-divider></mat-divider>
+    <mat-nav-list>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/home']"><mat-icon>home</mat-icon>Home</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/catagory']"><mat-icon>closed_caption</mat-icon>Catagory</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/aparment']"><mat-icon>closed_caption</mat-icon>Apartment</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/empDesignation']"><mat-icon>closed_caption</mat-icon>Designation</a>
+      <mat-divider></mat-divider>
+      <a mat-list-item (click)="drawer.toggle()" [routerLink]="['/employee']"><mat-icon>closed_caption</mat-icon>Employee</a>
+    </mat-nav-list>
+  </mat-sidenav>
+  <mat-sidenav-content>
+    <mat-toolbar color="warn">
+      <button type="button" aria-label="Toggle sidenav" mat-icon-button (click)="drawer.toggle()">
+        <mat-icon aria-label="Sidenav toggle icon">menu</mat-icon>
+      </button>
+    </mat-toolbar>
+    <div class="top container">
+      <router-outlet></router-outlet>
+
+    </div>
+  </mat-sidenav-content>
+</mat-sidenav-container>

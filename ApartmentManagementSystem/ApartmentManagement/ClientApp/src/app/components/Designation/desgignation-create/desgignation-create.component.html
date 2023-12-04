@@ -1,0 +1,17 @@
+<form class="form-container" [formGroup]="desgForm" (submit)="insert()">
+  <div class="f-w">
+    <h2>Create New Designation</h2>
+  </div>
+  <mat-form-field class="f-w">
+    <mat-label>Designation</mat-label>
+    <input matInput formControlName="designationName" required>
+    <mat-error *ngIf="f.designationName.touched && f.designationName.errors">Designation Name Required!</mat-error>
+  </mat-form-field>
+
+  <div class="f-w">
+    <button [disabled]="desgForm.invalid" mat-raised-button type="submit" color="accent"><mat-icon>save_alt </mat-icon>Save</button>
+  </div>
+  <div class="f-w">
+    <a mat-flat-button [routerLink]="['/empDesignation']">Back To List</a>
+  </div>
+</form>
